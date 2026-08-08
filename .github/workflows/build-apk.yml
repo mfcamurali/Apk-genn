@@ -4,6 +4,9 @@ on:
   push:
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
   apk:
     runs-on: ubuntu-latest
@@ -28,9 +31,9 @@ jobs:
         run: npx cap add android
 
       - name: Generate icons and splash screens
-        run: npx capacitor-assets generate --android || echo "no custom assets, using defaults"
+        run: npx capacitor-assets generate --android
 
-      - name: Apply app version and orientation
+      - name: Apply app version, orientation, and splash fix
         run: node scripts/patch-android.mjs
 
       - name: Sync Capacitor
@@ -44,3 +47,13 @@ jobs:
         with:
           name: apk-genn-debug-apk
           path: android/app/build/outputs/apk/debug/app-debug.apk
+
+      - name: Publish APK as a Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: build-${{ github.run_number }}
+          name: "Apk Genn build ${{ github.run_number }}"
+          files: android/app/build/outputs/apk/debug/app-debug.apk
+          make_latest: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
