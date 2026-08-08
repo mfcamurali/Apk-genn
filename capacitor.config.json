@@ -1,9 +1,9 @@
 {
-  "appId": "app.lovable.apkgenn",
-  "appName": "Apk Genn",
+  "appId": "app.lovable.foggythink",
+  "appName": "Fog",
   "webDir": "www",
   "server": {
-    "url": "https://apkgenn.lovable.app",
+    "url": "https://foggythink.lovable.app",
     "cleartext": false,
     "androidScheme": "https"
   },
@@ -21,7 +21,7 @@
     "StatusBar": {
       "backgroundColor": "#0b0f0d",
       "style": "DARK",
-      "overlaysWebView": false
+      "overlaysWebView": true
     }
   }
 }

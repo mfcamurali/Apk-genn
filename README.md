@@ -1,6 +1,6 @@
-# Apk Genn — Android package
+# Fog — Android package
 
-This is a ready-to-build Android wrapper for **https://apkgenn.lovable.app**.
+This is a ready-to-build Android wrapper for **https://foggythink.lovable.app**.
 You do not need Android Studio: GitHub builds the APK for you.
 
 ## Fastest path (no local setup)
@@ -8,7 +8,7 @@ You do not need Android Studio: GitHub builds the APK for you.
 1. Create a new empty GitHub repository.
 2. Upload every file in this folder to it (keep the folder structure).
 3. Open the **Actions** tab → the "Build APK" workflow runs automatically.
-4. When it turns green, open the run and download the **apk-genn-debug-apk** artifact.
+4. When it turns green, open the run and download the **fog-debug-apk** artifact.
 5. Unzip it, copy `app-debug.apk` to your phone and install it (allow "install from unknown sources").
 
 ## Build locally instead
@@ -30,14 +30,14 @@ APK lands in `android/app/build/outputs/apk/debug/app-debug.apk`.
 
 | Setting | Value |
 | --- | --- |
-| App name | Apk Genn |
-| Package id | app.lovable.apkgenn |
-| Site URL | https://apkgenn.lovable.app |
+| App name | Fog |
+| Package id | app.lovable.foggythink |
+| Site URL | https://foggythink.lovable.app |
 | Version | 1.0.0 (1) |
-| Orientation | default |
+| Orientation | portrait |
 | Theme colour | #0b0f0d |
 | Splash colour | #0b0f0d |
-| Fullscreen | no |
+| Fullscreen | yes |
 | External links open in app | yes |
 | Offline fallback page | yes |
 
